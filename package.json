@@ -1,0 +1,15 @@
+{
+    "version": "0.1.0",
+    "name": "org.apache.cordova.wifiinfo",
+    "cordova_name": "WiFi Information",
+    "description": "Get SSID WiFI information Android and iOS",
+    "license": "GPL v3",
+    "keywords": [
+        "cordova",
+        "wifi",
+		"wi-fi",
+        "wi-fi information",
+        "wi-fi ssid"
+    ],
+    "engines": []
+}

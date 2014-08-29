@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="org.apache.cordova.wifiinfo"
+    version="0.1.0">
+    <name>WiFi SSID Information</name>
+    <description>Cordova get SSID WiFI information Android and iOS</description>
+    <license>GPL v3</license>
+    <keywords>cordova,toasts, notification</keywords>
+    <repo>https://github.com/KinG-InFeT/WiFiInfo.git</repo>
+    <issue>https://github.com/KinG-InFeT/WiFiInfo/issues</issue>
+
+    <js-module src="www/wifiinfo.js" name="wifiinfo">
+        <clobbers target="WiFiInfo" />
+    </js-module>
+    
+    <dependency id="org.apache.cordova.device" />
+    <dependency id="org.apache.cordova.console" />
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="WiFiInfo" >
+                <param name="android-package" value="org.apache.cordova.wifiinfo.WiFiInfo"/>
+            </feature>
+        </config-file>
+        
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+            <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+        </config-file>
+
+
+        <source-file src="src/android/WiFiInfo.java" target-dir="src/org/apache/cordova/wifiinfo" />
+    </platform>
+    
+    <platform name="ios">
+		<config-file target="config.xml" parent="/*">
+			<feature name="WiFiInfo">
+				<param name="ios-package" value="WiFiInfo"/>
+			</feature>
+		</config-file>
+
+		<header-file src="src/ios/WiFiInfo.h"  compiler-flags="-fno-objc-arc" />
+        <source-file src="src/ios/WiFiInfo.m" compiler-flags="-fno-objc-arc"  />
+		
+		<framework src="SystemConfiguration.framework" />
+		<framework src="Foundation.framework" />
+	</platform>
+
+</plugin>
