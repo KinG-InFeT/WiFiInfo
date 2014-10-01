@@ -16,7 +16,7 @@ By Linkpass S.r.l.
 cordova plugins add https://github.com/KinG-InFeT/WiFiInfo.git
 ```
 
-* Call the plugin, set the variable with message to view in Toast
+* Call the plugin:
 
 ```javascript
 WiFiInfo.getInfo( 
@@ -33,6 +33,6 @@ WiFiInfo.getInfo(
 ## CHANGELOG
 
 ### 29/08/2014 (vers 0.1.0)
-* Initial release (Tested with Cordova 3.4.0, platform android v4.4.4)
+* Initial release (Tested with Cordova 3.5.0, platform android v4.4.4)
 
 Thanks for the attention ;)
